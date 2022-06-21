@@ -12,11 +12,22 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{C843A79F-A0F5-450D-AE15-39CD1ED2822C}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{DE43210B-21F6-454F-995A-0CA2A842F4F0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONTROL_ACCESO.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{FDDD34AA-2461-483B-AB87-B209937319B9}"
+      DTS:ObjectName="CONTROL_ACCESO.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\ETL UCU\REGISTRO_ERRORES\CONTROL_ACCESO.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[PostgreZK.read]"
       DTS:CreationName="ODBC"
@@ -27,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="gJN2lDVX1TA="
-            IV="URV/pXq5ae+zwalKXvVpNw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="5EUa9aaFHXk="
+            IV="f8i1+7y0l7cn90rNugruqw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>URV/pXq5ae+zwalKXvVpN4V/VBtoQ1Lrs0DTNb4Ps6ZiHROZk+nILDVgqwRBLIH4VnEXtsDqtBwQvq4FmT4LeEbRNkxk3DlbPfvAUHQ189fHRsQwmVRPHIBRG35JZbQkjGhHN5PAQ0iJjPQaj81nB3Y0ceXln3B+J3e/e/kxOY7NXUNmh163mrndRFEoxNMM</CipherValue>
+              <CipherValue>f8i1+7y0l7cn90rNugruqy1V4i7Rxqs1SFs9ajDuZ/bqQsJM2/GC9z9YPxmQ6fvJvwEaFhpwmsnDt5AYj++w47tEN8Wv4gZJ/sR1H6g4TQ9WIgIdeyo+MuoUQ9+PS1giEiOqqbeOrOJ3usFOdWtfhOCFfLLXInaSnr9X1hBOiRXCQxOmJAxbX6Gb9yxKAlYc</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -48,19 +59,60 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="hWW8G8cVjDE="
-            IV="xFln7G7xmR6uhhkrJsHkwA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="dEx8jDoSg8Y="
+            IV="zUehxtqJ+Nl94cTa0z7o0Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>xFln7G7xmR6uhhkrJsHkwKVdUhuAFm8AWw+iTpN3EYVn1c/AkFZLnxZdC+C7iunma9B8+Pdjme7N/GB6+2MR6m5IjviDp+vmetnYssaofC8u4T66FiBSu5+bcQEXMWq52wy061jHgISg+ya7NsAbKcCKzf2uHgwrdIQlk/Ebxdos9/oJuKf3N9PD17bz/3f4</CipherValue>
+              <CipherValue>zUehxtqJ+Nl94cTa0z7o0bepXnKSOI57KhuMoB5v6S22z5YBuw1ROU2GfsWgkmQs16bEnNeWYp42WR9tp9p10rawQiWqPnzCzBBUsxXyy9ADmngrB43KKucqIUuipYt0lC24qsoSy0zxTCAPsNimQyUMFnQul6CfqITi3UYkY9nOa40PcWfmSRdo4IWQL5ls</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CONTROL_ACCESO.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Escribe entradas del registro sobre eventos en un archivo CSV"
+      DTS:DTSID="{E9176010-9920-40BE-A9BE-F6C840B63622}"
+      DTS:ObjectName="Proveedor de registro SSIS para archivos de texto">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{E9176010-9920-40BE-A9BE-F6C840B63622}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Todos los datos de control de acceso"
@@ -72,6 +124,8 @@
       DTS:ObjectName="Todos los datos de control de acceso"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -92,7 +146,7 @@
                 <property
                   dataType="System.String"
                   description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">[ODS_ZK_acc_transaction]</property>
+                  name="OpenRowset">[dbo].[ODS_ZK_acc_transaction]</property>
                 <property
                   dataType="System.String"
                   description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -114,7 +168,7 @@
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">3</property>
+                  typeConverter="AccessMode">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
@@ -1603,6 +1657,8 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{B9655A24-7E3B-4AC3-B8FB-AA23A518E0AF}"
