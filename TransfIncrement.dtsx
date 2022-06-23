@@ -12,8 +12,8 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{A389404D-AA22-4445-874F-1B205514468A}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{C5EC7B3F-3DEE-48FE-8781-D3CD34DF3B82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="zlchAgU+8XA="
-            IV="VNTdI0LYjn6rqUxjuo9lJw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="eJ6HHkYIgyg="
+            IV="VrvC3mtXrcUc6kvDRw/EqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>VNTdI0LYjn6rqUxjuo9lJ34989twOdjeNc8LefY9Jyjp5L5aCxu+uyKaXDSxqvYwHIs/obWR80jy6OP1AVHsM205COlIFz8SprJ6p8CKuwF47iIxKOxyUQEIr74MFTdedhQJ+hdgCA0Ou+mb6YXcaQ3F5779n0PZGzFlDSO6DGFy905gLe6wwzn/SozAQJ0Y</CipherValue>
+              <CipherValue>VrvC3mtXrcUc6kvDRw/EqIXnLBsTtVpZO0tO880hnLY2tVtAn0DOgdDOApZrgB33iV+EhB0vdd2MblVG/yO1cpFqzQF4h5AISNzKWk/HoVj/Ro3zPN1kq8hC1WwNCg5qBi+7upyzosirLhEC79ZOrh2RrgxSyuywd6d6JQ97qeDO6GQCKJmzFWko1Nu8PDMa</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -48,12 +48,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="RxSHCgdw69c="
-            IV="Zud9JHxVLV7F+xSHIGWC0g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="QY/FlhBgkEs="
+            IV="g6FIRlObbCgA0+uHOvLUbA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Zud9JHxVLV7F+xSHIGWC0m2xAOpAVoky6W8MNdNnW8k5/UvLOj7IUQHBIr0GXRAGr36Mm6IBbYG+lnX5UN7Nik1tv6tizi9cpsz7vJBTnGKEyytXxJCiggitegw7l3R7hURUFq8/sKWxTPjGVAB+Ah6YbQtrTMUnzek5GWx2lem+2kaZIa6zYa2tkwNZkVZW</CipherValue>
+              <CipherValue>g6FIRlObbCgA0+uHOvLUbF3PnFYh81hwiLSX7mxN4biyX1ZtxDT13vJS59bKXikhTnWiCp+08hOTi5eSAAo73TQJCmKVlMgrG3rR+5iXxEJz3dUWSY3En9VapYYGefYYGKKTJm5S8X8CTIUd9UCOTO17ocTd/CVsu2YrV02L2eGvVW89zy9eZE0nZzaNJFGJ</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -105,7 +105,7 @@
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:PropertyExpression
-        DTS:Name="[Extrae de acc_transaction].[SqlCommand]">"SELECT * FROM acc_transaction WHERE create_time &gt; TO_TIMESTAMP('"+(DT_WSTR,30)@[User::FechaUltAccTransfer]+"' , 'DD/MM/YYYY HH:MI:SS')"</DTS:PropertyExpression>
+        DTS:Name="[Extrae de acc_transaction].[SqlCommand]">"SELECT * FROM acc_transaction WHERE create_time &gt; TO_TIMESTAMP('"+(DT_WSTR,30)@[User::FechaUltAccTransfer]+"' , 'DD/MM/YYYY HH24:MI:SS')"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -716,10 +716,10 @@
             <component
               refId="Package\Tarea Flujo de datos\Extrae de acc_transaction"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae de acc_transaction"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -732,7 +732,7 @@
                   description="Comando SQL para ejecutar."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM acc_transaction WHERE create_time &gt; TO_TIMESTAMP('16/06/2022 15:47:26' , 'DD/MM/YYYY HH:MI:SS')</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM acc_transaction WHERE create_time &gt; TO_TIMESTAMP('16/06/2022 15:47:26' , 'DD/MM/YYYY HH24:MI:SS')</property>
                 <property
                   dataType="System.Int32"
                   description="Especifique el número de filas recuperadas por lote."
@@ -1688,13 +1688,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200,42"
-          Id="Package\Tarea Flujo de datos\Extrae de acc_transaction"
-          TopLeft="142.5,94.5" />
-        <NodeLayout
           Size="267,42"
           Id="Package\Tarea Flujo de datos\Carga dato en ODS_ZK_acc_transaction"
           TopLeft="454.5,94.5" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Tarea Flujo de datos\Extrae de acc_transaction"
+          TopLeft="142.5,94.5" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ODBC]"
           TopLeft="342.5,115.5">
@@ -1721,14 +1721,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Extrae de acc_transaction">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Carga dato en ODS_ZK_acc_transaction">
     <Properties>
       <Property>
@@ -1738,6 +1730,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Extrae de acc_transaction">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

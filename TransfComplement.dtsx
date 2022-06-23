@@ -12,8 +12,8 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{94575221-E8FF-465B-AC6F-4BAAB3F7AE90}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{67CD1DE7-9133-4892-B725-70155C9B8062}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="RL7v0uxHBBs="
-            IV="m0HgVJtSVNIzCuymzmX8Dg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="10BIMqtgK6c="
+            IV="63xgX5UsH4NehitA/zI5uw==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>m0HgVJtSVNIzCuymzmX8DrzNi4A+OG3wh8pkUoZBdCyA+hKFJSUEwZCtnrlDta9I9M1WVuZQ/diagqWQbIJsEkAtTMyYjsgMS6VL1xDFIenXt+/EF/LLhAjdmubPTwN6D3AXE62bEs3TxZdDSyoWViEycpueKbNItwCjJoNf/IGShJp6qeUKPuVTD6JO1fEs</CipherValue>
+              <CipherValue>63xgX5UsH4NehitA/zI5u2D1eSEN+HBA8jZPnor5tAR6OH8IZq4XKYqYn6xszeYR+CZQJJ0yyk71uUHwoPeP3KrNl4tz+LNFdsXcrsrSGhspZnJCslC22eufvRLjizk0wUN8eJGChrBuvKD5aoYIOXnch3OajYJGhKacGqjqgOY6uSTDgjxw8g2lpvxirDKo</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -48,12 +48,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="nIjlctCMzKQ="
-            IV="a3uyA1WbxCJpmSZA4p2jxQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="0IHZt5HktFY="
+            IV="G7M4DrBNVUUKuowheo+yqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>a3uyA1WbxCJpmSZA4p2jxc7XM/3LYMBooMagSBebtvnO3RgEyHv+t/SOgbAKdDK0+RM+cSFUbbqR6Dew72UBI/1guiyIGvMGiCaewF/smnS/CDebyraszw7ojjZ3XIzcNqlfLinyevaid+8ZD7RVUrQuHPWI1r+FFcaHxGOOkoD/pRMGX4ys0i7zo3bKLj0X</CipherValue>
+              <CipherValue>G7M4DrBNVUUKuowheo+yqOtGgbzJLC+MI9hwruaj5C9XlXuNza+zRMNYKKml4kAdETdqYjCLh4NXVGTIcA1Jb2yr35Oc3jBqO7xSEMXcKX8fS0TX+E2hlVjcUvwKWA+/lSkxnsFxNn6G3KWua8Cf2LhpTbvav+M6tEn9wH9+eT+xoOS87K9US1gGkJeSEXdk</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -71,7 +71,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_device"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -122,7 +122,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_level_door"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -139,7 +139,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_reader"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -156,7 +156,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="auth_area"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -173,7 +173,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="auth_department"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -755,10 +755,10 @@
             <component
               refId="Package\ODS_ZK_acc_device\Extrae acc_device"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae acc_device"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -2258,10 +2258,10 @@
             <component
               refId="Package\ODS_ZK_acc_door\Extrae acc_door"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae acc_door"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -3600,10 +3600,10 @@
             <component
               refId="Package\ODS_ZK_acc_level\Extrae acc_level"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae acc_level"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -4392,10 +4392,10 @@
             <component
               refId="Package\ODS_ZK_acc_level_door\Extrae acc_level_door"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae acc_level_door"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -5263,10 +5263,10 @@
             <component
               refId="Package\ODS_ZK_acc_reader\Extrae acc_reader"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae acc_reader"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -6275,10 +6275,10 @@
             <component
               refId="Package\ODS_ZK_auth_area\Extrae auth_area"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae auth_area"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -7066,10 +7066,10 @@
             <component
               refId="Package\ODS_ZK_auth_department\Extrae auth_department"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="Extrae auth_department"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -8099,10 +8099,10 @@
             <component
               refId="Package\ODS_ZK_pers_person\extrae pers_person"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="extrae pers_person"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -9435,10 +9435,10 @@
             <component
               refId="Package\ODS_ZK_vis_visitor\extrae vis_visitor"
               componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen ODBC"
               name="extrae vis_visitor"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="1">
               <properties>
                 <property
@@ -10536,7 +10536,7 @@
     design-time-name="Package\ODS_ZK_acc_device">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="163,42"
           Id="Package\ODS_ZK_acc_device\Extrae acc_device"
@@ -10564,9 +10564,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10602,49 +10600,47 @@
     design-time-name="Package\ODS_ZK_acc_door">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\ODS_ZK_acc_door\Extrae acc_door"
-          TopLeft="5.5,5.5" />
+          TopLeft="189.5,11.5" />
         <NodeLayout
           Size="197,42"
           Id="Package\ODS_ZK_acc_door\Carga ODS_ZK_acc_door"
           TopLeft="180.5,196.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_acc_door.Paths[Salida de origen de ODBC]"
-          TopLeft="83,47.5">
+          TopLeft="267,53.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="196,149"
+              EndConnector="12,143"
               Start="0,0"
-              End="196,141.5">
+              End="12,135.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.5" />
+                    End="0,67.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,70.5"
-                    Point2="0,74.5"
-                    Point3="4,74.5" />
+                    Point1="0,67.5"
+                    Point2="0,71.5"
+                    Point3="4,71.5" />
                   <mssgle:LineSegment
-                    End="192,74.5" />
+                    End="8,71.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="192,74.5"
-                    Point2="196,74.5"
-                    Point3="196,78.5" />
+                    Point1="8,71.5"
+                    Point2="12,71.5"
+                    Point3="12,75.5" />
                   <mssgle:LineSegment
-                    End="196,141.5" />
+                    End="12,135.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10680,49 +10676,35 @@
     design-time-name="Package\ODS_ZK_acc_level">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\ODS_ZK_acc_level\Extrae acc_level"
-          TopLeft="5.5,5.5" />
+          TopLeft="325.5,18.5" />
         <NodeLayout
           Size="197,42"
           Id="Package\ODS_ZK_acc_level\Carga ODS_ZK_acc_level"
           TopLeft="305.5,232.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_acc_level.Paths[Salida de origen de ODBC]"
-          TopLeft="83,47.5">
+          TopLeft="403.5,60.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="321,185"
+              EndConnector="0,172"
               Start="0,0"
-              End="321,177.5">
+              End="0,164.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,88.5"
-                    Point2="0,92.5"
-                    Point3="4,92.5" />
-                  <mssgle:LineSegment
-                    End="317,92.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="317,92.5"
-                    Point2="321,92.5"
-                    Point3="321,96.5" />
-                  <mssgle:LineSegment
-                    End="321,177.5" />
+                    End="0,164.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10758,7 +10740,7 @@
     design-time-name="Package\ODS_ZK_acc_level_door">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="224,42"
           Id="Package\ODS_ZK_acc_level_door\Carga ODS_ZK_acc_level_door"
@@ -10766,41 +10748,39 @@
         <NodeLayout
           Size="182,42"
           Id="Package\ODS_ZK_acc_level_door\Extrae acc_level_door"
-          TopLeft="5.5,5.5" />
+          TopLeft="157.5,9.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_acc_level_door.Paths[Salida de origen de ODBC]"
-          TopLeft="96.5,47.5">
+          TopLeft="248.5,51.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="140,134"
+              EndConnector="-12,130"
               Start="0,0"
-              End="140,126.5">
+              End="-12,122.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63" />
+                    End="0,61" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,63"
-                    Point2="0,67"
-                    Point3="4,67" />
+                    Point1="0,61"
+                    Point2="0,65"
+                    Point3="-4,65" />
                   <mssgle:LineSegment
-                    End="136,67" />
+                    End="-8,65" />
                   <mssgle:CubicBezierSegment
-                    Point1="136,67"
-                    Point2="140,67"
-                    Point3="140,71" />
+                    Point1="-8,65"
+                    Point2="-12,65"
+                    Point3="-12,69" />
                   <mssgle:LineSegment
-                    End="140,126.5" />
+                    End="-12,122.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10836,49 +10816,47 @@
     design-time-name="Package\ODS_ZK_acc_reader">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="164,42"
           Id="Package\ODS_ZK_acc_reader\Extrae acc_reader"
-          TopLeft="5.5,5.5" />
+          TopLeft="231.5,7.5" />
         <NodeLayout
           Size="206,42"
           Id="Package\ODS_ZK_acc_reader\Carga ODS_ZK_acc_reader"
           TopLeft="251.5,176.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_acc_reader.Paths[Salida de origen de ODBC]"
-          TopLeft="87.5,47.5">
+          TopLeft="313.5,49.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="267,129"
+              EndConnector="41,127"
               Start="0,0"
-              End="267,121.5">
+              End="41,119.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.5" />
+                    End="0,59.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,60.5"
-                    Point2="0,64.5"
-                    Point3="4,64.5" />
+                    Point1="0,59.5"
+                    Point2="0,63.5"
+                    Point3="4,63.5" />
                   <mssgle:LineSegment
-                    End="263,64.5" />
+                    End="37,63.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="263,64.5"
-                    Point2="267,64.5"
-                    Point3="267,68.5" />
+                    Point1="37,63.5"
+                    Point2="41,63.5"
+                    Point3="41,67.5" />
                   <mssgle:LineSegment
-                    End="267,121.5" />
+                    End="41,119.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10914,49 +10892,35 @@
     design-time-name="Package\ODS_ZK_auth_area">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,42"
           Id="Package\ODS_ZK_auth_area\Extrae auth_area"
-          TopLeft="5.5,5.5" />
+          TopLeft="193.5,26.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\ODS_ZK_auth_area\Carga auth_area"
-          TopLeft="194.5,168.5" />
+          TopLeft="194.5,174.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_auth_area.Paths[Salida de origen de ODBC]"
-          TopLeft="85.5,47.5">
+          TopLeft="273.25,68.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="187.5,121"
+              EndConnector="0,106"
               Start="0,0"
-              End="187.5,113.5">
+              End="0,98.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,56.5"
-                    Point2="0,60.5"
-                    Point3="4,60.5" />
-                  <mssgle:LineSegment
-                    End="183.5,60.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="183.5,60.5"
-                    Point2="187.5,60.5"
-                    Point3="187.5,64.5" />
-                  <mssgle:LineSegment
-                    End="187.5,113.5" />
+                    End="0,98.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10992,7 +10956,7 @@
     design-time-name="Package\ODS_ZK_auth_department">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="194,42"
           Id="Package\ODS_ZK_auth_department\Extrae auth_department"
@@ -11020,9 +10984,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11062,37 +11024,25 @@
         <NodeLayout
           Size="170,42"
           Id="Package\ODS_ZK_pers_person\extrae pers_person"
-          TopLeft="5.5,5.5" />
+          TopLeft="257.5,16.5" />
         <NodeLayout
           Size="211,42"
           Id="Package\ODS_ZK_pers_person\carga ODS_ZK_pers_person"
           TopLeft="233.5,194.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_pers_person.Paths[Salida de origen de ODBC]"
-          TopLeft="90.5,47.5">
+          TopLeft="340.75,58.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="248.5,147"
+              EndConnector="0,136"
               Start="0,0"
-              End="248.5,139.5">
+              End="0,128.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,69.5"
-                    Point2="0,73.5"
-                    Point3="4,73.5" />
-                  <mssgle:LineSegment
-                    End="244.5,73.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="244.5,73.5"
-                    Point2="248.5,73.5"
-                    Point3="248.5,77.5" />
-                  <mssgle:LineSegment
-                    End="248.5,139.5" />
+                    End="0,128.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11138,37 +11088,25 @@
         <NodeLayout
           Size="158,42"
           Id="Package\ODS_ZK_vis_visitor\extrae vis_visitor"
-          TopLeft="5.5,5.5" />
+          TopLeft="233.5,11.5" />
         <NodeLayout
           Size="199,42"
           Id="Package\ODS_ZK_vis_visitor\carga ODS_ZK_vis_visitor"
           TopLeft="211.5,202.5" />
         <EdgeLayout
           Id="Package\ODS_ZK_vis_visitor.Paths[Salida de origen de ODBC]"
-          TopLeft="84.5,47.5">
+          TopLeft="311.75,53.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="226.5,155"
+              EndConnector="0,149"
               Start="0,0"
-              End="226.5,147.5">
+              End="0,141.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,73.5"
-                    Point2="0,77.5"
-                    Point3="4,77.5" />
-                  <mssgle:LineSegment
-                    End="222.5,77.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="222.5,77.5"
-                    Point2="226.5,77.5"
-                    Point3="226.5,81.5" />
-                  <mssgle:LineSegment
-                    End="226.5,147.5" />
+                    End="0,141.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
