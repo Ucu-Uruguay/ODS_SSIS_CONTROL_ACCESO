@@ -12,11 +12,22 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{C5EC7B3F-3DEE-48FE-8781-D3CD34DF3B82}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{E26B13A7-04AB-4C41-8082-82212A855EE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CONTROL_ACCESO.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7612AFC9-1658-4B81-B4F3-2C6B5AD2C409}"
+      DTS:ObjectName="CONTROL_ACCESO.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\ETL UCU\REGISTRO_ERRORES\CONTROL_ACCESO.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[PostgreZK.read]"
       DTS:CreationName="ODBC"
@@ -27,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="eJ6HHkYIgyg="
-            IV="VrvC3mtXrcUc6kvDRw/EqA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="Fd3TGADXsn8="
+            IV="b9KAPl+LOClhLvs9FrA5sQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>VrvC3mtXrcUc6kvDRw/EqIXnLBsTtVpZO0tO880hnLY2tVtAn0DOgdDOApZrgB33iV+EhB0vdd2MblVG/yO1cpFqzQF4h5AISNzKWk/HoVj/Ro3zPN1kq8hC1WwNCg5qBi+7upyzosirLhEC79ZOrh2RrgxSyuywd6d6JQ97qeDO6GQCKJmzFWko1Nu8PDMa</CipherValue>
+              <CipherValue>b9KAPl+LOClhLvs9FrA5sRSxauoZ85Sq1YSU+kf4n9cgDjCi2sKiVCFpaMZr/jZvKYLlkKC9pekY+39JPQe1Zy2PfkZrUZmFfjIR7cbeAsqz8vmnC9/e8zJk63SWWBNdid1rnYj/aFdpckDwMKSxbk9msZ/nEoU0Dk+wnBRnQsXWir8BBYL7SugkP9PHgTaH</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -48,18 +59,30 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="QY/FlhBgkEs="
-            IV="g6FIRlObbCgA0+uHOvLUbA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="F5Wc0AcYNGw="
+            IV="Ln0jzjzGw6D76vBxKJnCQA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>g6FIRlObbCgA0+uHOvLUbF3PnFYh81hwiLSX7mxN4biyX1ZtxDT13vJS59bKXikhTnWiCp+08hOTi5eSAAo73TQJCmKVlMgrG3rR+5iXxEJz3dUWSY3En9VapYYGefYYGKKTJm5S8X8CTIUd9UCOTO17ocTd/CVsu2YrV02L2eGvVW89zy9eZE0nZzaNJFGJ</CipherValue>
+              <CipherValue>Ln0jzjzGw6D76vBxKJnCQIJv889QMWsSv1r7fjnl6qyyJSbz5oie1M5h/kPgon9WcC8ipthlAhEE1FzBdvSK8nrEo54HT2ij85L2MU0KZ6qpg/9hXDGmMh6VLDz8OgkGaFCRi8F3YX9Onp46TwwjIypwjVzzeMFbdSKRRY7hdWU3ZHZxtz5nJ/fSebKseBEa</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="CONTROL_ACCESO.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Escribe entradas del registro sobre eventos en un archivo CSV"
+      DTS:DTSID="{EC5604BC-14F3-48C5-A43E-3700AC59502B}"
+      DTS:ObjectName="Proveedor de registro SSIS para archivos de texto">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -71,6 +94,31 @@
         DTS:DataType="7">6/16/2022 3:47:26 PM</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Tarea Ejecutar SQL"
@@ -83,6 +131,8 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6033BC00-1B09-43AE-86AE-D8342206F08F}"
@@ -104,6 +154,8 @@
       DTS:ObjectName="Tarea Flujo de datos"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:PropertyExpression
         DTS:Name="[Extrae de acc_transaction].[SqlCommand]">"SELECT * FROM acc_transaction WHERE create_time &gt; TO_TIMESTAMP('"+(DT_WSTR,30)@[User::FechaUltAccTransfer]+"' , 'DD/MM/YYYY HH24:MI:SS')"</DTS:PropertyExpression>
       <DTS:ObjectData>
