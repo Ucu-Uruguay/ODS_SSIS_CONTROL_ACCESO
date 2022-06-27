@@ -9,11 +9,11 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="3082"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="TransfIncrement"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{E26B13A7-04AB-4C41-8082-82212A855EE3}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{6971E743-234A-427B-90EC-ED70F099C6FA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Fd3TGADXsn8="
-            IV="b9KAPl+LOClhLvs9FrA5sQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="96YDwBPV2vw="
+            IV="buunWLruI5frwqftFTLdCQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>b9KAPl+LOClhLvs9FrA5sRSxauoZ85Sq1YSU+kf4n9cgDjCi2sKiVCFpaMZr/jZvKYLlkKC9pekY+39JPQe1Zy2PfkZrUZmFfjIR7cbeAsqz8vmnC9/e8zJk63SWWBNdid1rnYj/aFdpckDwMKSxbk9msZ/nEoU0Dk+wnBRnQsXWir8BBYL7SugkP9PHgTaH</CipherValue>
+              <CipherValue>buunWLruI5frwqftFTLdCdcO9VSvVitUr7rOxezHAMS0XKWoiieFAO+n82zrsvhrSPYjkWZjoJ/HlMRh4LRHiuXoxE4OwdXspIauHcjSvKN9eqn3NgeKpTFlTtvBeZhJFhJRRzn0oXrlzv2xQY0JmHNkD7/eOEVtB1OQpK+3Iiju5lVt0a0MhGO8BTujViJU</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="F5Wc0AcYNGw="
-            IV="Ln0jzjzGw6D76vBxKJnCQA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="20xx+wKFnYU="
+            IV="asjhcq/xF7rBJ0iQm9rzbg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Ln0jzjzGw6D76vBxKJnCQIJv889QMWsSv1r7fjnl6qyyJSbz5oie1M5h/kPgon9WcC8ipthlAhEE1FzBdvSK8nrEo54HT2ij85L2MU0KZ6qpg/9hXDGmMh6VLDz8OgkGaFCRi8F3YX9Onp46TwwjIypwjVzzeMFbdSKRRY7hdWU3ZHZxtz5nJ/fSebKseBEa</CipherValue>
+              <CipherValue>asjhcq/xF7rBJ0iQm9rzbsLXcAVJ3D3g/pZbj/z07Tbx9rLhXaY081XVnC0/nPa3OX/hAl436d4mtBKFmVgFWZ4L76wCHUqWAz8X4ta5MOoBSjvItjdEeVTJmRYYENxMTlztFQ8yOHp1vohgvYOs3Rr5NX+KK9Eyl3GtILS8yaZy248NiqAnG1MdzWUax9pS</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -118,6 +118,10 @@
       <DTS:Property
         DTS:Name="DataBytes">-1</DTS:Property>
     </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{EC5604BC-14F3-48C5-A43E-3700AC59502B}" />
+    </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable

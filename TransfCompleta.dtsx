@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/16/2022 5:23:03 PM"
@@ -9,11 +9,11 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="3082"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="TransfCompleta"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{1F639441-F0F4-4C8C-BA4F-0D10184F9769}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{05084B1B-F153-4E3D-A902-977C177C9FB1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="xsxeRcGDFos="
-            IV="a+jEioYnpT+tp1Jo8Rz85g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="1syBvqazJNc="
+            IV="ETe3AxFNt6TnzirXboL17A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>a+jEioYnpT+tp1Jo8Rz85lXGuGezpXy4dLdGUxZgYmkVdZ37HhunZ56woAMYCE6WOv/DWvGw+J9hdOBqPhsnkstZ+U5n7kXzsgf+wAW3T0y5nEPqJ8qusYB3tqiaytwNM3G6Ra7IEttf3yS2S8DbVhCHkTpb8qQ2yzhwGhx116p91a36+O5x8myNSHZfJULm</CipherValue>
+              <CipherValue>ETe3AxFNt6TnzirXboL17MzzOpmpYPXV4c4UBLnN9+JXasFqul9svM0qrAcvDKuWqXo+lZxlKPA5T+CRCgkhPDfLjLGdN3Jv9ELy5oYrgGZwOQU4qUFetFP0NPnggHs4jHEIlOh09IXNVEvuD6slQEwPcgt6ZJsJ5PWjmc+9anZEozVRXWeGU8zo1oeY8RRY</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="A7SJwGbTr3Y="
-            IV="pSzyMDXn9w5qEQJdPGonJQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="3gVczcI3mXw="
+            IV="kuYy5nWGmuKcP19Nm7UoYg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>pSzyMDXn9w5qEQJdPGonJd1hz2ZEUt6oZrviH6n2oV33AlWc4BASvfWaJDpXeZHF+ruC4fT4A0pF1+F8Hp3cCAFGdkSh5HwUHeBB9ydX5KQQFN5NAdVFnES4RojKuD7s1uud0WaCzPfBKWhW2JukCU5oYaglrvIU9iTN4OSU2N3QCKVYH4KBul0CAOA0J2OB</CipherValue>
+              <CipherValue>kuYy5nWGmuKcP19Nm7UoYtzpYxN6FvXF6a5KI/epwgCXnLFpo1z/7CUu+G4gsN0zeQy8GZlePsZPv1bFSGSV45JsDNdeLRZBsePyciXQlG0pUSR5aeKHJpjNM4IudW+VfCUaRbCn2jKciz1T1iRJItSM2G9VXPd6ICPA8oqL+TWQ8wx6qOymd2jenAuFCMfI</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -155,7 +155,7 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
