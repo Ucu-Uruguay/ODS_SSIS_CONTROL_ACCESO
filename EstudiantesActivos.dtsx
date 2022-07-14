@@ -9,11 +9,11 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.132"
   DTS:LocaleID="3082"
-  DTS:ObjectName="EstudiantesActivos"
+  DTS:ObjectName="ODS_EstudiantesActivos"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{7D265B8A-F089-4CA4-B33E-43B4E9DC2438}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{CFE70793-EF11-4233-B719-3E4DD0086D16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="Data Source=HRPROD;User ID=UCU_GP;Provider=OraOLEDB.Oracle.1;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="4iV5ry6ruq0="
-            IV="Qc1F2Cipy2srGtDCbPGFng==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="SColqtz+dSM="
+            IV="ahXVOQJfyZcOPX/At1q2mA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Qc1F2Cipy2srGtDCbPGFnknM6r+Dcv2eOSdg5dUPZa8ubbWyC4/rqNY0MIWNL0KXXA3cokVR4BaG58ZiWPti6esKsTtGm/Z0soGELt+x0HwqYjM1FiGkr0k1oDB+icwMEflBuuAOwWftjzGEbEPnSvLJfLDWbEuFfn8f4h9Sq4oQbQB5ItuUC1da4ktqQDVo</CipherValue>
+              <CipherValue>ahXVOQJfyZcOPX/At1q2mLcCf0ytdmSL92A/yxUGav2MZOPglbiiQySShCpbVYUZKZOMH2E+dXTUDkItqqjDOP2NnbY7BXsrs7G4RgKbtNapi8TbPEZLiKPi4XeQzNYhsuKWc+9kU/TZS1kx+2EUuqW58X9O4PioBQSsMCs0SL+Z1nuToHIEtKj57WoTWRcH</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="za8RNNEIuuI="
-            IV="JzDP/s9A3ofkLjdZ9K6vhA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="7jk/k50ktE8="
+            IV="ZgDd/vbrS5BHxwYLymlezQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>JzDP/s9A3ofkLjdZ9K6vhB8yWUfduuwj5hCEBUjfV7r/O4yO1brHyM5ikG1NgpVWzgH9zlzL4DoPvrlowIjmQh0yz+Couh1NGd/I59HS1SUfOTba7v29f5i1Kpc+DlJqntABUTvoyli6jdMpGYS1FKIxa1SDh+e1ARl/ZQiZywGCyJ00LUOJb8Cpv0ZT8zTM</CipherValue>
+              <CipherValue>ZgDd/vbrS5BHxwYLymlezaL0QUmDmBR3YRNtMx3tbHc4M2fup7mGosyOONjREk+kgO+FfLzNzVtNwQ72jsWJ8yONljDIc9dTCrJ90dM3BqG3M/zpDb85ccGL9sYdnyhubv4aKjtevPh6zuacgqJuK2/3iBUaZbACmn80Kk48RYNNf6otALCLmrdAVuT9uD7T</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -1833,6 +1833,19 @@ ORDER BY EMPLID</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Estudiantes para el ZK\Carga ODS_ZK_Estudiantes">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Estudiantes para el ZK\Extrae Estudiantes ODS">
     <Properties>
       <Property>
@@ -1850,19 +1863,6 @@ ORDER BY EMPLID</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Estudiantes para el ZK\Carga ODS_ZK_Estudiantes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
