@@ -1,0 +1,3559 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/15/2022 10:15:14 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PROD-UCUDBS10"
+  DTS:CreatorName="UCUADM\SSLVPN-RCALVO"
+  DTS:DTSID="{C1003DF5-383B-4B81-8E18-7542C532FE91}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="QR"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{5AD5CEE7-B4DF-4A34-BFF1-2B6400EA80C7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B49FC78A-3DC9-4685-9B01-163F1CCE9454}"
+      DTS:ObjectName="10.245.0.34.controlaccesoqr.rcalvo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.245.0.34;User ID=rcalvo;Initial Catalog=controlaccesoqr;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ebR8lHXKHeI="
+            IV="aQFINA5IEtkN4EZPgv2Ywg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>aQFINA5IEtkN4EZPgv2Ywhv90VVpd08aw4OWC+oQ5s3hP5pYjuILb4Hq86NRpB7VDLTomID7zRP+9gS2TOuf3g92dBgv9XxvcF/D80U9fV8D8QTM5DIpIe9plV+dN5C/Yv9J7vr1cX8704SNpW9FMGGpMr3BVM0m4XI+h4thSb2CcC/k7T/VMt32Cs+P5BQe</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ODS_QR.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2C478FD4-3AAA-4198-9A0D-3A7A5E29D504}"
+      DTS:ObjectName="ODS_QR.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\ETL UCU\REGISTRO_ERRORES\ODS_QR.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C2CEB682-E8E8-4CFD-BA8D-EA16200238E8}"
+      DTS:ObjectName="PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <EncryptedData
+            Type="http://www.w3.org/2001/04/xmlenc#Element"
+            Salt="ivKUAMmhqMU="
+            IV="JRhQe/UvwzXnzQrt+gO5Sg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            <EncryptionMethod
+              Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
+            <CipherData>
+              <CipherValue>JRhQe/UvwzXnzQrt+gO5Sto7CW2fjFSMu+R/vhA0COhgursx67OGn07Meuso4JwytxmqR0aNKmATIZF1WtjqEx6Vfmwovw702bGgFe87DmWEAfGoSK/Pb6+J+BMt/RGNu6lZ2IPoWFVvgemNRo5f9fF7tDRlPVD6Drb/JwVf8ojT/RvGzNN0HAimhZOCu7cY</CipherValue>
+            </CipherData>
+          </EncryptedData>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ODS_QR.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Escribe entradas del registro sobre eventos en un archivo CSV"
+      DTS:DTSID="{FCC28DDD-47E1-4FC5-B832-510F00B64532}"
+      DTS:ObjectName="Proveedor de registro SSIS para archivos de texto">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{FCC28DDD-47E1-4FC5-B832-510F00B64532}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL Eventos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{857365D3-7170-48BC-8538-4B7CC64DF182}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL Eventos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL Eventos\Dejo documento solo numeros"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;12"
+              description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
+              name="Dejo documento solo numeros"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Almacena el código fuente del componente"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_4311d996919a428bb114591bbc487053")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_4311d996919a428bb114591bbc487053")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Entrada0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        if (!Row.MDocumento_IsNull)
+        {
+            Row.MDocumento = System.Text.RegularExpressions.Regex.Replace(Row.MDocumento, "[^0-9]", "");
+}
+        else
+        {
+            Row.MDocumento_IsNull = true;
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Entrada0Buffer: ScriptBuffer
+
+{
+    public Entrada0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String MDocumento
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool MDocumento_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propiedad IsNull no puede establecerse en False. En su lugar, asigne un valor a la columna.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Entrada 0", StringComparison.Ordinal))
+        {
+            Entrada0_ProcessInput(new Entrada0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Entrada0_ProcessInput(Entrada0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Entrada0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_4311d996919a428bb114591bbc487053.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D17EFC5C-87C8-497F-95B9-0E56CC9A0017}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_4311d996919a428bb114591bbc487053</RootNamespace>
+    <AssemblyName>SC_4311d996919a428bb114591bbc487053</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_4311d996919a428bb114591bbc487053</msb:CodeName>
+    <msb:DisplayName>SC_4311d996919a428bb114591bbc487053</msb:DisplayName>
+    <msb:ProjectId>{E41624D6-4841-4E16-8C4B-DFD0696CC73E}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_4311d996919a428bb114591bbc487053.csproj" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_4311d996919a428bb114591bbc487053.Properties.Settings.get_Default():SC_4311d996919a428bb114591bbc487053.Properties.Sett" +
+    "ings")]
+
+namespace SC_4311d996919a428bb114591bbc487053.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_4311d996919a428bb114591bbc487053.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_4311d996919a428bb114591bbc487053.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_4311d996919a428bb114591bbc487053.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_4311d996919a428bb114591bbc487053.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_4311d996919a428bb114591bbc487053.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Almacena la representación binaria del componente"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_4311d996919a428bb114591bbc487053.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAP9Zm2MAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAKjIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANgxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAMBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAM
+MgAAAAAAAEgAAAACAAUAyCEAAFgPAAABAAAAAAAAACAxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiqyA28IAAAGLRwDA28GAAAGcgEA
+AHByDwAAcCgSAAAKbwcAAAYqAxdvCQAABioeAigMAAAGKioCAwQFKBMAAAoqUgJ7FAAACgJ7FQAA
+ChaUbxYAAAoqJgIWAygXAAAKKiICFigYAAAKKloDLAgCFigZAAAKKnIRAABwcxoAAAp6HgIoGwAA
+CioeAigcAAAKKn4CKB0AAAoCAnMQAAAGfQEAAAQCAnMRAAAGfQIAAAQqkgRy0AAAcBpvHgAACiwV
+AgUCAygfAAAKDgRzBQAABm8OAAAGKkorBwIDbw8AAAYDbwoAAAYt8SoGKjoCKCAAAAoCA30DAAAE
+KjoCKCAAAAoCA30EAAAEKh4CKCAAAAoqrn4FAAAELR5y5AAAcNAHAAACKCEAAApvIgAACnMjAAAK
+gAUAAAR+BQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqHgIoJAAACioucxcAAAaABwAABCoAAABC
+U0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAABkBQAAI34AANAFAAB0BgAAI1N0cmlu
+Z3MAAAAARAwAAFgBAAAjVVMAnA0AABAAAAAjR1VJRAAAAKwNAACsAQAAI0Jsb2IAAAAAAAAAAgAA
+AVcVoAEJAQAAAPoBMwAWAAABAAAAIAAAAAgAAAAHAAAAGAAAAA8AAAAkAAAAEAAAAAMAAAAFAAAA
+CAAAAAEAAAAEAAAAAQAAAAAA9QIBAAAAAAAGAOwBgAQGAIACgAQGADgBbQQPAPQEAAAGAGUBogMG
+AM8BogMGALABogMGAGcCogMGAAwCogMGACUCogMGAHwBogMGAJcBuwIKAEAChQAKAD8EhQAOADAE
+hQAKAAkEhQAKANkFhQAGAJwFWgMGABsBbQQGAFAEoAQGAN8DjQMSAOsA3wISAEwB3wISANMAeAMG
+AAABgAQSAF4GcQUGALQDWgMGANgCWgMGAM4DWgMGAKYAWgMGAFcAWgMGAGgGogMAAAAAJQAAAAAA
+AQABAAEAEABtAwAAEAABAAEAAQAQACEEAAA5AAEABQABABAAuwUAAEUAAQAMAAEAEACQBQAASQAD
+ABAAAQAQADIFAABJAAQAEQAAABAApwQDBUkABQASAAABEABhBQMFYQAHABYABgCQBXwABgAyBYAA
+AQDJBYQAAQDJBYQAEQBhA4gAEQDDAIwAEQBHAJAAUCAAAAAAxgCeAgYAAQBYIAAAAADGAKkCBgAB
+AGAgAAAAAMYAPQaUAAEAjSAAAAAAhhhgBAYAAgCVIAAAAACGGGAEIgACAKAgAAAAAIYI6wOaAAUA
+tSAAAAAAhgj6AxAABQC/IAAAAACGCB0DRAAGAMggAAAAAIYIMwOeAAYA3yAAAAAAhgBWBkQABwDn
+IAAAAACGAKMFRAAHAO8gAAAAAIYYYAQGAAcADyEAAAAAxgAwBqMABwA0IQAAAADGAScGlAALAEch
+AAAAAMYBPQaUAAwASSEAAAAAhhhgBK0ADQBYIQAAAACGGGAErQAOAGchAAAAAIMYYAQGAA8AbyEA
+AAAAkwhMBLMADwCbIQAAAACTCKsAuAAPAKIhAAAAAJMItwC9AA8AqiEAAAAAlgivBcMAEACxIQAA
+AACGGGAEBgAQALkhAAAAAJEYZgTIABAAAAABAFoGAAABAEUEAAACADwFAAADABcEAAABALUCAAAB
+ALUCAAABAC4AAAACAHsAAAADAEUEAAAEABcEAAABAEUEAAABAFoGAAABAN8FAAABAN8FAAABALUC
+CQBgBAEAEQBgBAYAGQBgBAoAKQBgBBAAMQBgBBAAOQBgBBAAQQBgBBAASQBgBBAAUQBgBBAAWQBg
+BBAAYQBgBBAAaQBgBAYAmQBgBAYAuQBgBBUAyQBgBAYAiQCeAgYAiQCpAgYA0QA/ABsAcQBgBCIA
+cQBFBCwAcQA8BTAAeQDVAjQAcQBRAzkAcQBCAz8AcQBJAwEA2QBgBBAAcQBWBkQAcQCjBUQAiQBg
+BAYA4QBqBUgAiQBQBU8AkQBgBAYA8QBpAFUA8QBkBlwAoQBgBGIAwQBgBAYALgALAOMALgATAOwA
+LgAbAAsBLgAjABQBLgArAD0BLgAzAD0BLgA7AD0BLgBDABQBLgBLAEMBLgBTAD0BLgBbAFoBQwBj
+AKQBaQBzAAsBiQBzAAsB4QB7AKQB4wBrAKQBAwABAAcAAwAIAAUAAAD+A8wAAAA3A9AAAABQBNQA
+AADLANkAAACzBd4AAgAGAAMAAQAHAAMAAgAIAAUAAQAJAAUAAgATAAcAAgAUAAkAAQAVAAkAAgAW
+AAsABIAAAAEAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAGoANgAAAAAADwAAAAAAAAAAAAAA
+cwDpBQAAAAAPAAAAAAAAAAAAAABzAAYGAAAAAAQAAAAAAAAAAAAAAGoAWgMAAAAAAAAAAAEAAACx
+BAAAAAAAU0NfNDMxMWQ5OTY5MTlhNDI4YmIxMTQ1OTFiYmM0ODcwNTMAPE1vZHVsZT4ASW5wdXRJ
+RABtc2NvcmxpYgBSZXBsYWNlAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRU
+eXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUA
+VHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25T
+ZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1
+dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRv
+ckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRp
+b25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4
+YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdo
+dEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0
+ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAEdldFN0cmluZwBT
+eXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfNDMxMWQ5OTY5MTlhNDI4YmIxMTQ1OTFiYmM0ODcwNTMu
+ZGxsAGdldF9NRG9jdW1lbnRvX0lzTnVsbABzZXRfTURvY3VtZW50b19Jc051bGwAU2V0TnVsbABz
+ZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlv
+bgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9u
+RXhjZXB0aW9uAFN0cmluZ0NvbXBhcmlzb24AQ3VsdHVyZUluZm8AZ2V0X01Eb2N1bWVudG8Ac2V0
+X01Eb2N1bWVudG8AT3V0cHV0TmFtZU1hcABPdXRwdXRNYXAARW50cmFkYTBCdWZmZXIAUGlwZWxp
+bmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5
+c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5S
+ZXNvdXJjZXMAU0NfNDMxMWQ5OTY5MTlhNDI4YmIxMTQ1OTFiYmM0ODcwNTMuUHJvcGVydGllcy5S
+ZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDXzQzMTFkOTk2OTE5YTQyOGJiMTE0
+NTkxYmJjNDg3MDUzLlByb3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0
+Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAU3lzdGVtLlRleHQuUmVndWxhckV4cHJlc3Np
+b25zAENvbm5lY3Rpb25zAE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9u
+ZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5U
+eFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABFbnRyYWRhMF9Qcm9jZXNz
+SW5wdXQARW50cmFkYTBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAUmVnZXgAZ2V0X0Fzc2VtYmx5
+AAAAAAANWwBeADAALQA5AF0AAQEAgL1MAGEAIABwAHIAbwBwAGkAZQBkAGEAZAAgAEkAcwBOAHUA
+bABsACAAbgBvACAAcAB1AGUAZABlACAAZQBzAHQAYQBiAGwAZQBjAGUAcgBzAGUAIABlAG4AIABG
+AGEAbABzAGUALgAgAEUAbgAgAHMAdQAgAGwAdQBnAGEAcgAsACAAYQBzAGkAZwBuAGUAIAB1AG4A
+IAB2AGEAbABvAHIAIABhACAAbABhACAAYwBvAGwAdQBtAG4AYQAuAAATRQBuAHQAcgBhAGQAYQAg
+ADAAAHFTAEMAXwA0ADMAMQAxAGQAOQA5ADYAOQAxADkAYQA0ADIAOABiAGIAMQAxADQANQA5ADEA
+YgBiAGMANAA4ADcAMAA1ADMALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBl
+AHMAAAAADwprXNuIskq3cqtsx9/FRgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQYAAw4ODg4J
+IAMBEj0dCBJBAwYSPQMGHQgEIAEOCAUgAgEIHAQgAQIIAyAAAgYgAgIOEXUFIAEdCAgGAAESeRF9
+BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJEDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAF
+IAEBEgwDIAAOBCABAQIJIAQBCA4SPRJBBSABARJFBAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMo
+AA4DKAACBAgAElEECAASVQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhy
+b3dzAQgBAAIAAAAAACgBACNTQ180MzExZDk5NjkxOWE0MjhiYjExNDU5MWJiYzQ4NzA1MwAABQEA
+AAAAFgEAEUNvcHlyaWdodCBAICAyMDIyAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcB
+AFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAAAAAtAAAAM7K
+774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVy
+c2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkz
+NGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQ
+QURQtAAAAAAyAAAAAAAAAAAAABoyAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMMgAAAAAAAAAA
+AAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwA0ADMAMQAxAGQAOQA5ADYAOQAxADkAYQA0ADIAOABiAGIAMQAxADQANQA5ADEAYgBi
+AGMANAA4ADcAMAA1ADMAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADQAMwAxADEAZAA5
+ADkANgA5ADEAOQBhADQAMgA4AGIAYgAxADEANAA1ADkAMQBiAGIAYwA0ADgANwAwADUAMwAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANAAz
+ADEAMQBkADkAOQA2ADkAMQA5AGEANAAyADgAYgBiADEAMQA0ADUAOQAxAGIAYgBjADQAOAA3ADAA
+NQAzAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADQAMwAx
+ADEAZAA5ADkANgA5ADEAOQBhADQAMgA4AGIAYgAxADEANAA1ADkAMQBiAGIAYwA0ADgANwAwADUA
+MwAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAALDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del proyecto de Microsoft Visual Studio Tools para Aplicaciones. Los nombres de proyecto deben ser únicos en el paquete."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_4311d996919a428bb114591bbc487053</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el lenguaje de programación que utiliza el script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de solo lectura."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de lectura/escritura."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Lista de puntos de interrupción presentes en el script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">7E</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL Eventos\Dejo documento solo numeros.Inputs[Entrada 0]"
+                  hasSideEffects="true"
+                  name="Entrada 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Eventos\Dejo documento solo numeros.Inputs[Entrada 0].Columns[M_Documento]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Documento"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Documento]"
+                      usageType="readWrite" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Eventos\Dejo documento solo numeros.Outputs[Salida 0]"
+                  name="Salida 0"
+                  synchronousInputId="Package\ETL Eventos\Dejo documento solo numeros.Inputs[Entrada 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Eventos\Extrae eventos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Extrae eventos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Marcas]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Eventos\Extrae eventos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[Id_Mar]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[Id_Mar]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[Id_Mar]"
+                      name="Id_Mar"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_FechaHora]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_FechaHora]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_FechaHora]"
+                      name="M_FechaHora"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Operacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Operacion]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Operacion]"
+                      name="M_Operacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Id_Persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Id_Persona]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Id_Persona]"
+                      name="M_Id_Persona"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Documento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Documento]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Documento]"
+                      name="M_Documento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Reader_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Reader_Name]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Reader_Name]"
+                      name="M_Reader_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Edificio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Edificio]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Edificio]"
+                      name="M_Edificio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_IdMarca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_IdMarca]"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_IdMarca]"
+                      name="M_IdMarca"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[Id_Mar]"
+                      dataType="guid"
+                      name="Id_Mar" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_FechaHora]"
+                      dataType="dbTimeStamp"
+                      name="M_FechaHora" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Operacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Id_Persona" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Documento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Reader_Name]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Reader_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Edificio" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].ExternalColumns[M_IdMarca]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_IdMarca" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[Id_Mar]"
+                      dataType="guid"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[Id_Mar]"
+                      name="Id_Mar" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_FechaHora]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_FechaHora]"
+                      name="M_FechaHora" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Operacion]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Operacion]"
+                      name="M_Operacion" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Id_Persona]"
+                      name="M_Id_Persona" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Documento]"
+                      name="M_Documento" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Reader_Name]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Reader_Name]"
+                      name="M_Reader_Name" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_Edificio]"
+                      name="M_Edificio" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_IdMarca]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[M_IdMarca]"
+                      name="M_IdMarca" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Eventos\ODS_QR_Eventos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="ODS_QR_Eventos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[ODS_QR_Eventos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Eventos\ODS_QR_Eventos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[Id_Mar]"
+                      cachedDataType="guid"
+                      cachedName="Id_Mar"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[Id_Mar]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[Id_Mar]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_FechaHora]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="M_FechaHora"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_FechaHora]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_FechaHora]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_Operacion]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Operacion"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Operacion]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Operacion]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_Id_Persona]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Id_Persona"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Id_Persona]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Id_Persona]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_Documento]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Documento"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Documento]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Documento]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_Reader_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Reader_Name"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Reader_Name]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Reader_Name]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_Edificio]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_Edificio"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Edificio]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_Edificio]" />
+                    <inputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].Columns[M_IdMarca]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="M_IdMarca"
+                      externalMetadataColumnId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_IdMarca]"
+                      lineageId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB].Columns[M_IdMarca]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[Id_Mar]"
+                      dataType="guid"
+                      name="Id_Mar" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_FechaHora]"
+                      dataType="dbTimeStamp"
+                      name="M_FechaHora" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Operacion]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Operacion" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Id_Persona" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Documento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Reader_Name]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Reader_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_Edificio" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB].ExternalColumns[M_IdMarca]"
+                      dataType="wstr"
+                      length="100"
+                      name="M_IdMarca" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Eventos\ODS_QR_Eventos.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Eventos\ODS_QR_Eventos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Eventos\ODS_QR_Eventos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Eventos\ODS_QR_Eventos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL Eventos.Paths[Salida 0]"
+              endId="Package\ETL Eventos\ODS_QR_Eventos.Inputs[Entrada de destino de OLE DB]"
+              name="Salida 0"
+              startId="Package\ETL Eventos\Dejo documento solo numeros.Outputs[Salida 0]" />
+            <path
+              refId="Package\ETL Eventos.Paths[Salida de origen de OLE DB]"
+              endId="Package\ETL Eventos\Dejo documento solo numeros.Inputs[Entrada 0]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL Eventos\Extrae eventos.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ETL Mayores"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{33CF0CD4-A370-48CB-AE58-BC99D71A5BB8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL Mayores"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL Mayores\Componente de script"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;12"
+              description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
+              name="Componente de script"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Almacena el código fuente del componente"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Entrada 0", StringComparison.Ordinal))
+        {
+            Entrada0_ProcessInput(new Entrada0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Entrada0_ProcessInput(Entrada0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Entrada0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Entrada0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Entrada0_ProcessInputRow(Entrada0Buffer Row)
+    {
+        /*
+         * Add your code here
+         */
+        if (!Row.PDocumento_IsNull)
+        {
+            Row.PDocumento = System.Text.RegularExpressions.Regex.Replace(Row.PDocumento, "[^0-9]", "");
+        }
+        else
+        {
+            Row.PDocumento_IsNull = true;
+        }
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Entrada0Buffer: ScriptBuffer
+
+{
+    public Entrada0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String PDocumento
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool PDocumento_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propiedad IsNull no puede establecerse en False. En su lugar, asigne un valor a la columna.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Settings.get_Default():SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Sett" +
+    "ings")]
+
+namespace SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_6aff4754717e4b77807a9dd0d5eebcc1</msb:CodeName>
+    <msb:DisplayName>SC_6aff4754717e4b77807a9dd0d5eebcc1</msb:DisplayName>
+    <msb:ProjectId>{A128965E-A0A4-4133-A71E-8E0EB503167E}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_6aff4754717e4b77807a9dd0d5eebcc1.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_6aff4754717e4b77807a9dd0d5eebcc1")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_6aff4754717e4b77807a9dd0d5eebcc1")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_6aff4754717e4b77807a9dd0d5eebcc1.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FFA7555-4D82-44A8-B12D-8FE35C05FB93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_6aff4754717e4b77807a9dd0d5eebcc1</RootNamespace>
+    <AssemblyName>SC_6aff4754717e4b77807a9dd0d5eebcc1</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_6aff4754717e4b77807a9dd0d5eebcc1.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Almacena la representación binaria del componente"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_6aff4754717e4b77807a9dd0d5eebcc1.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJJYm2MAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAAKjIA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANgxAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAMBIAAAAgAAAAFAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAM
+MgAAAAAAAEgAAAACAAUAyCEAAFgPAAABAAAAAAAAACAxAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiqyA28IAAAGLRwDA28GAAAGcgEA
+AHByDwAAcCgSAAAKbwcAAAYqAxdvCQAABioeAigMAAAGKioCAwQFKBMAAAoqUgJ7FAAACgJ7FQAA
+ChaUbxYAAAoqJgIWAygXAAAKKiICFigYAAAKKloDLAgCFigZAAAKKnIRAABwcxoAAAp6HgIoGwAA
+CioeAigcAAAKKn4CKB0AAAoCAnMQAAAGfQEAAAQCAnMRAAAGfQIAAAQqkgRy0AAAcBpvHgAACiwV
+AgUCAygfAAAKDgRzBQAABm8OAAAGKkorBwIDbw8AAAYDbwoAAAYt8SoGKjoCKCAAAAoCA30DAAAE
+KjoCKCAAAAoCA30EAAAEKh4CKCAAAAoqrn4FAAAELR5y5AAAcNAHAAACKCEAAApvIgAACnMjAAAK
+gAUAAAR+BQAABCoafgYAAAQqHgKABgAABCoafgcAAAQqHgIoJAAACioucxcAAAaABwAABCoAAABC
+U0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAABkBQAAI34AANAFAAB0BgAAI1N0cmlu
+Z3MAAAAARAwAAFgBAAAjVVMAnA0AABAAAAAjR1VJRAAAAKwNAACsAQAAI0Jsb2IAAAAAAAAAAgAA
+AVcVoAEJAQAAAPoBMwAWAAABAAAAIAAAAAgAAAAHAAAAGAAAAA8AAAAkAAAAEAAAAAMAAAAFAAAA
+CAAAAAEAAAAEAAAAAQAAAAAA9QIBAAAAAAAGAOwBgAQGAIACgAQGADgBbQQPAPQEAAAGAGUBogMG
+AM8BogMGALABogMGAGcCogMGAAwCogMGACUCogMGAHwBogMGAJcBuwIKAEAChQAKAD8EhQAOADAE
+hQAKAAkEhQAKANkFhQAGAJwFWgMGABsBbQQGAFAEoAQGAN8DjQMSAOsA3wISAEwB3wISANMAeAMG
+AAABgAQSAF4GcQUGALQDWgMGANgCWgMGAM4DWgMGAKYAWgMGAFcAWgMGAGgGogMAAAAAJQAAAAAA
+AQABAAEAEABtAwAAEAABAAEAAQAQACEEAAA5AAEABQABABAAuwUAAEUAAQAMAAEAEACQBQAASQAD
+ABAAAQAQADIFAABJAAQAEQAAABAApwQDBUkABQASAAABEABhBQMFYQAHABYABgCQBXwABgAyBYAA
+AQDJBYQAAQDJBYQAEQBhA4gAEQDDAIwAEQBHAJAAUCAAAAAAxgCeAgYAAQBYIAAAAADGAKkCBgAB
+AGAgAAAAAMYAPQaUAAEAjSAAAAAAhhhgBAYAAgCVIAAAAACGGGAEIgACAKAgAAAAAIYI6wOaAAUA
+tSAAAAAAhgj6AxAABQC/IAAAAACGCB0DRAAGAMggAAAAAIYIMwOeAAYA3yAAAAAAhgBWBkQABwDn
+IAAAAACGAKMFRAAHAO8gAAAAAIYYYAQGAAcADyEAAAAAxgAwBqMABwA0IQAAAADGAScGlAALAEch
+AAAAAMYBPQaUAAwASSEAAAAAhhhgBK0ADQBYIQAAAACGGGAErQAOAGchAAAAAIMYYAQGAA8AbyEA
+AAAAkwhMBLMADwCbIQAAAACTCKsAuAAPAKIhAAAAAJMItwC9AA8AqiEAAAAAlgivBcMAEACxIQAA
+AACGGGAEBgAQALkhAAAAAJEYZgTIABAAAAABAFoGAAABAEUEAAACADwFAAADABcEAAABALUCAAAB
+ALUCAAABAC4AAAACAHsAAAADAEUEAAAEABcEAAABAEUEAAABAFoGAAABAN8FAAABAN8FAAABALUC
+CQBgBAEAEQBgBAYAGQBgBAoAKQBgBBAAMQBgBBAAOQBgBBAAQQBgBBAASQBgBBAAUQBgBBAAWQBg
+BBAAYQBgBBAAaQBgBAYAmQBgBAYAuQBgBBUAyQBgBAYAiQCeAgYAiQCpAgYA0QA/ABsAcQBgBCIA
+cQBFBCwAcQA8BTAAeQDVAjQAcQBRAzkAcQBCAz8AcQBJAwEA2QBgBBAAcQBWBkQAcQCjBUQAiQBg
+BAYA4QBqBUgAiQBQBU8AkQBgBAYA8QBpAFUA8QBkBlwAoQBgBGIAwQBgBAYALgALAOMALgATAOwA
+LgAbAAsBLgAjABQBLgArAD0BLgAzAD0BLgA7AD0BLgBDABQBLgBLAEMBLgBTAD0BLgBbAFoBQwBj
+AKQBaQBzAAsBiQBzAAsB4QB7AKQB4wBrAKQBAwABAAcAAwAIAAUAAAD+A8wAAAA3A9AAAABQBNQA
+AADLANkAAACzBd4AAgAGAAMAAQAHAAMAAgAIAAUAAQAJAAUAAgATAAcAAgAUAAkAAQAVAAkAAgAW
+AAsABIAAAAEAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAGoANgAAAAAADwAAAAAAAAAAAAAA
+cwDpBQAAAAAPAAAAAAAAAAAAAABzAAYGAAAAAAQAAAAAAAAAAAAAAGoAWgMAAAAAAAAAAAEAAACx
+BAAAAAAAU0NfNmFmZjQ3NTQ3MTdlNGI3NzgwN2E5ZGQwZDVlZWJjYzEAPE1vZHVsZT4ASW5wdXRJ
+RABtc2NvcmxpYgBSZXBsYWNlAGRlZmF1bHRJbnN0YW5jZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRU
+eXBlRnJvbUhhbmRsZQBJbnB1dE5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUA
+VHlwZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAQXBwbGljYXRpb25T
+ZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1
+dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRv
+ckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRp
+b25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4
+YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdo
+dEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAUHJlRXhlY3V0
+ZQBQb3N0RXhlY3V0ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAEdldFN0cmluZwBT
+eXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfNmFmZjQ3NTQ3MTdlNGI3NzgwN2E5ZGQwZDVlZWJjYzEu
+ZGxsAGdldF9QRG9jdW1lbnRvX0lzTnVsbABzZXRfUERvY3VtZW50b19Jc051bGwAU2V0TnVsbABz
+ZXRfSXRlbQBTeXN0ZW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlv
+bgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9u
+RXhjZXB0aW9uAFN0cmluZ0NvbXBhcmlzb24AQ3VsdHVyZUluZm8AZ2V0X1BEb2N1bWVudG8Ac2V0
+X1BEb2N1bWVudG8AT3V0cHV0TmFtZU1hcABPdXRwdXRNYXAARW50cmFkYTBCdWZmZXIAUGlwZWxp
+bmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5
+c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5S
+ZXNvdXJjZXMAU0NfNmFmZjQ3NTQ3MTdlNGI3NzgwN2E5ZGQwZDVlZWJjYzEuUHJvcGVydGllcy5S
+ZXNvdXJjZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDXzZhZmY0NzU0NzE3ZTRiNzc4MDdh
+OWRkMGQ1ZWViY2MxLlByb3BlcnRpZXMAVmFyaWFibGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMAR2V0
+Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAU3lzdGVtLlRleHQuUmVndWxhckV4cHJlc3Np
+b25zAENvbm5lY3Rpb25zAE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9u
+ZW50AFBhcmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQATWljcm9zb2Z0LlNxbFNlcnZlci5U
+eFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABFbnRyYWRhMF9Qcm9jZXNz
+SW5wdXQARW50cmFkYTBfUHJvY2Vzc0lucHV0Um93AE5leHRSb3cAUmVnZXgAZ2V0X0Fzc2VtYmx5
+AAAAAAANWwBeADAALQA5AF0AAQEAgL1MAGEAIABwAHIAbwBwAGkAZQBkAGEAZAAgAEkAcwBOAHUA
+bABsACAAbgBvACAAcAB1AGUAZABlACAAZQBzAHQAYQBiAGwAZQBjAGUAcgBzAGUAIABlAG4AIABG
+AGEAbABzAGUALgAgAEUAbgAgAHMAdQAgAGwAdQBnAGEAcgAsACAAYQBzAGkAZwBuAGUAIAB1AG4A
+IAB2AGEAbABvAHIAIABhACAAbABhACAAYwBvAGwAdQBtAG4AYQAuAAATRQBuAHQAcgBhAGQAYQAg
+ADAAAHFTAEMAXwA2AGEAZgBmADQANwA1ADQANwAxADcAZQA0AGIANwA3ADgAMAA3AGEAOQBkAGQA
+MABkADUAZQBlAGIAYwBjADEALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBl
+AHMAAAAA6EKnCfa6m0uVdLRCEheDDgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQYAAw4ODg4J
+IAMBEj0dCBJBAwYSPQMGHQgEIAEOCAUgAgEIHAQgAQIIAyAAAgYgAgIOEXUFIAEdCAgGAAESeRF9
+BSAAEoCBByACAQ4SgIEIt3pcVhk04IkIiYRdzYCAzJEDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAF
+IAEBEgwDIAAOBCABAQIJIAQBCA4SPRJBBSABARJFBAAAElEEAAASVQUAAQESVQQAABIgAwAAAQMo
+AA4DKAACBAgAElEECAASVQQIABIgCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhy
+b3dzAQgBAAIAAAAAACgBACNTQ182YWZmNDc1NDcxN2U0Yjc3ODA3YTlkZDBkNWVlYmNjMQAABQEA
+AAAAFgEAEUNvcHlyaWdodCBAICAyMDIyAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcB
+AFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwQBAAAAAAAAtAAAAM7K
+774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVy
+c2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkz
+NGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQ
+QURQtAAAAAAyAAAAAAAAAAAAABoyAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMMgAAAAAAAAAA
+AAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
+MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
+AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
+AABTAEMAXwA2AGEAZgBmADQANwA1ADQANwAxADcAZQA0AGIANwA3ADgAMAA3AGEAOQBkAGQAMABk
+ADUAZQBlAGIAYwBjADEAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfADYAYQBmAGYANAA3
+ADUANAA3ADEANwBlADQAYgA3ADcAOAAwADcAYQA5AGQAZAAwAGQANQBlAGUAYgBjAGMAMQAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8ANgBh
+AGYAZgA0ADcANQA0ADcAMQA3AGUANABiADcANwA4ADAANwBhADkAZABkADAAZAA1AGUAZQBiAGMA
+YwAxAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfADYAYQBm
+AGYANAA3ADUANAA3ADEANwBlADQAYgA3ADcAOAAwADcAYQA5AGQAZAAwAGQANQBlAGUAYgBjAGMA
+MQAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAALDIAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del proyecto de Microsoft Visual Studio Tools para Aplicaciones. Los nombres de proyecto deben ser únicos en el paquete."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_6aff4754717e4b77807a9dd0d5eebcc1</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el lenguaje de programación que utiliza el script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de solo lectura."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una lista separada por comas de variables de lectura/escritura."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Lista de puntos de interrupción presentes en el script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Suma de comprobación para comparar los metadatos del componente con los códigos compilados."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">81</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL Mayores\Componente de script.Inputs[Entrada 0]"
+                  hasSideEffects="true"
+                  name="Entrada 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Mayores\Componente de script.Inputs[Entrada 0].Columns[P_Documento]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Documento"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Documento]"
+                      usageType="readWrite" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Mayores\Componente de script.Outputs[Salida 0]"
+                  name="Salida 0"
+                  synchronousInputId="Package\ETL Mayores\Componente de script.Inputs[Entrada 0]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Mayores\Extrae accesos"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Extrae accesos"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Accesos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Mayores\Extrae accesos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Id_Acceso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Id_Acceso]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Id_Acceso]"
+                      name="A_Id_Acceso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Edificio]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Edificio]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Edificio]"
+                      name="A_Edificio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Nombre_Acceso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Nombre_Acceso]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Nombre_Acceso]"
+                      name="A_Nombre_Acceso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_ID]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_ID]"
+                      name="A_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Id_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Id_Acceso" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Edificio" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_Nombre_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Nombre_Acceso" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].ExternalColumns[A_ID]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Id_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Id_Acceso]"
+                      name="A_Id_Acceso" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Edificio]"
+                      name="A_Edificio" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Nombre_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_Nombre_Acceso]"
+                      name="A_Nombre_Acceso" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_ID]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[A_ID]"
+                      name="A_ID" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Mayores\Extrae personas"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Extrae personas"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Personas]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Mayores\Extrae personas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.245.0.34.controlaccesoqr.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[Id_Per]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[Id_Per]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[Id_Per]"
+                      name="Id_Per"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Id_Persona]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Id_Persona]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Id_Persona]"
+                      name="P_Id_Persona"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Nombres]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Nombres]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Nombres]"
+                      name="P_Nombres"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Apellidos]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Apellidos]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Apellidos]"
+                      name="P_Apellidos"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Documento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Documento]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Documento]"
+                      name="P_Documento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Email]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Email]"
+                      name="P_Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Movile_Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Movile_Phone]"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Movile_Phone]"
+                      name="P_Movile_Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Desde]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Fecha_Desde]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Desde]"
+                      name="P_Fecha_Desde"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Hasta]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Fecha_Hasta]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Hasta]"
+                      name="P_Fecha_Hasta"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[Id_Per]"
+                      dataType="guid"
+                      name="Id_Per" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Id_Persona" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Nombres]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Nombres" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Apellidos]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Documento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Email]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Email" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Movile_Phone]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Movile_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Fecha_Desde]"
+                      dataType="dbTimeStamp"
+                      name="P_Fecha_Desde" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].ExternalColumns[P_Fecha_Hasta]"
+                      dataType="dbTimeStamp"
+                      name="P_Fecha_Hasta" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[Id_Per]"
+                      dataType="guid"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[Id_Per]"
+                      name="Id_Per" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Id_Persona]"
+                      name="P_Id_Persona" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Nombres]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Nombres]"
+                      name="P_Nombres" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Apellidos]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Apellidos]"
+                      name="P_Apellidos" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Documento]"
+                      name="P_Documento" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Email]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Email]"
+                      name="P_Email" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Movile_Phone]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Movile_Phone]"
+                      name="P_Movile_Phone" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Fecha_Desde]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Fecha_Desde]"
+                      name="P_Fecha_Desde" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Fecha_Hasta]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[P_Fecha_Hasta]"
+                      name="P_Fecha_Hasta" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Mayores\ODS_QR_Accesos"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="ODS_QR_Accesos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[ODS_QR_Accesos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Mayores\ODS_QR_Accesos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].Columns[A_Id_Acceso]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="A_Id_Acceso"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Id_Acceso]"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Id_Acceso]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].Columns[A_Edificio]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="A_Edificio"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Edificio]"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Edificio]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].Columns[A_Nombre_Acceso]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="A_Nombre_Acceso"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Nombre_Acceso]"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_Nombre_Acceso]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].Columns[A_ID]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="A_ID"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_ID]"
+                      lineageId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB].Columns[A_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Id_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Id_Acceso" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Edificio]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Edificio" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_Nombre_Acceso]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_Nombre_Acceso" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB].ExternalColumns[A_ID]"
+                      dataType="wstr"
+                      length="100"
+                      name="A_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Mayores\ODS_QR_Accesos.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\ODS_QR_Accesos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Accesos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\ODS_QR_Accesos.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Mayores\ODS_QR_Personas"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="ODS_QR_Personas"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[ODS_QR_Personas]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Mayores\ODS_QR_Personas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  connectionManagerRefId="Package.ConnectionManagers[PROD-UCUDBS10\POWERBI.ODS_UCU.rcalvo]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[Id_Per]"
+                      cachedDataType="guid"
+                      cachedName="Id_Per"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[Id_Per]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[Id_Per]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Id_Persona]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Id_Persona"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Id_Persona]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Id_Persona]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Nombres]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Nombres"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Nombres]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Nombres]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Apellidos]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Apellidos"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Apellidos]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Apellidos]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Documento]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Documento"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Documento]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Documento]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Email]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Email"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Email]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Email]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Movile_Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="P_Movile_Phone"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Movile_Phone]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Movile_Phone]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Fecha_Desde]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="P_Fecha_Desde"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Fecha_Desde]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Desde]" />
+                    <inputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].Columns[P_Fecha_Hasta]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="P_Fecha_Hasta"
+                      externalMetadataColumnId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Fecha_Hasta]"
+                      lineageId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB].Columns[P_Fecha_Hasta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[Id_Per]"
+                      dataType="guid"
+                      name="Id_Per" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Id_Persona]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Id_Persona" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Nombres]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Nombres" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Apellidos]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Apellidos" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Documento]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Documento" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Email]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Email" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Movile_Phone]"
+                      dataType="wstr"
+                      length="100"
+                      name="P_Movile_Phone" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Fecha_Desde]"
+                      dataType="dbTimeStamp"
+                      name="P_Fecha_Desde" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB].ExternalColumns[P_Fecha_Hasta]"
+                      dataType="dbTimeStamp"
+                      name="P_Fecha_Hasta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Mayores\ODS_QR_Personas.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\ODS_QR_Personas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Mayores\ODS_QR_Personas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Mayores\ODS_QR_Personas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL Mayores.Paths[Salida 0]"
+              endId="Package\ETL Mayores\ODS_QR_Personas.Inputs[Entrada de destino de OLE DB]"
+              name="Salida 0"
+              startId="Package\ETL Mayores\Componente de script.Outputs[Salida 0]" />
+            <path
+              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
+              endId="Package\ETL Mayores\Componente de script.Inputs[Entrada 0]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
+              endId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Tablas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{9D03A74D-60B4-4CC3-A0D2-40D7A43BCA77}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Tablas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C2CEB682-E8E8-4CFD-BA8D-EA16200238E8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE ODS_QR_Accesos&#xA;TRUNCATE TABLE ODS_QR_Personas&#xA;TRUNCATE TABLE ODS_QR_Eventos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{1924DC58-43DD-4AB3-AD04-A3D8C2E22189}"
+      DTS:From="Package\Limpiar Tablas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\ETL Mayores" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF6F4B19-056D-4E89-BEFF-D45822A16263}"
+      DTS:From="Package\ETL Mayores"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\ETL Eventos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\ETL Eventos"
+          TopLeft="106.833333333333,174.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\ETL Mayores"
+          TopLeft="105.833333333333,90" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Limpiar Tablas"
+          TopLeft="101.833333333333,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="175.333333333333,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5"
+              Start="0,0"
+              End="0,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="175.333333333333,132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5"
+              Start="0,0"
+              End="0,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL Eventos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\ETL Eventos\ODS_QR_Eventos"
+          TopLeft="41.8333333333333,209.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\ETL Eventos\Extrae eventos"
+          TopLeft="48.8333333333333,5.5" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\ETL Eventos\Dejo documento solo numeros"
+          TopLeft="11.8333333333333,101.5" />
+        <EdgeLayout
+          Id="Package\ETL Eventos.Paths[Salida de origen de OLE DB]"
+          TopLeft="123.333333333333,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Eventos.Paths[Salida 0]"
+          TopLeft="123.333333333333,143.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Eventos\Extrae eventos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Eventos\ODS_QR_Eventos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ETL Mayores">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\ETL Mayores\ODS_QR_Personas"
+          TopLeft="619.5,75.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\ETL Mayores\ODS_QR_Accesos"
+          TopLeft="237.5,5.5" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\ETL Mayores\Extrae accesos"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\ETL Mayores\Extrae personas"
+          TopLeft="11.5,75.5" />
+        <EdgeLayout
+          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
+          TopLeft="154.5,26.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,0"
+              Start="0,0"
+              End="75.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="182,42"
+          Id="Package\ETL Mayores\Componente de script"
+          TopLeft="301.5,75.5" />
+        <EdgeLayout
+          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
+          TopLeft="165.5,96.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136,0"
+              Start="0,0"
+              End="128.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="128.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Mayores.Paths[Salida 0]"
+          TopLeft="483.5,96.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="136,0"
+              Start="0,0"
+              End="128.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="128.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Mayores\ODS_QR_Personas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Mayores\ODS_QR_Accesos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Mayores\Extrae accesos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Mayores\Extrae personas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
