@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/16/2022 5:23:03 PM"
@@ -13,7 +13,7 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="10"
-  DTS:VersionGUID="{C193C7B9-4A50-425B-B388-F78115C09B34}">
+  DTS:VersionGUID="{9F32063C-58D9-4CEB-A76D-4C58339A3F9A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="B7t4SXDqMW4="
-            IV="Zl1/kuTYrrBlsIqo+L+m9g==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="N0hyX+kUnWY="
+            IV="55wbver4jWcQ+/lgmp+WBg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Zl1/kuTYrrBlsIqo+L+m9mGxdrLv7pSrypdn33gXeWqblrcS1MJbvAT3x2sCod5+F+8hkHZzWoXYOsvCSIAI17lFh6RbXqu21SGurKljqD5eXLWacNt0lqbHH0u1JJEnngEq6agNni4Yv0SERDIGe8oVGa/keLpOhAgThXYPYMVLoSyH382C6BlKupJdfB56</CipherValue>
+              <CipherValue>55wbver4jWcQ+/lgmp+WBhBjKqrfNalcTioNPEjr8Joc3yVJcIc7kAXWG3xB6FDD+6QpTlsDwVHMunpUPW9k1RX5j7kQBuPyrLVi8QsUaGFbG+wdKc0R44nIYQXx2rMVmPeNCvdstyFlCUfynonJZqbJ1HDTE8Ic03/lImJWzxJENR0ZaPj9bWRH4fuhPqnG</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="LWp9aWWrAnQ="
-            IV="Xw11jgO7uvwSz50i5eaR9A==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="j2TTj2jDSXE="
+            IV="5AOuag8+Ed2IdrQOeaIKmg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>Xw11jgO7uvwSz50i5eaR9MDB5186SXoFmY/8/EhzoETXwvd0RHS0PdPExhZ3Gbb/gutWXtePq711nGLb6H+Yb+y4utpeW/lMW3l6qGYRPC0i322Evo8aYRrq3dVK3cf0uQxWW9UGhWWVPjxJnZoOg370hHll3Y3+PnDXsYbyNyb3INPtfAqbXaa1eS4kabUP</CipherValue>
+              <CipherValue>5AOuag8+Ed2IdrQOeaIKmhzsVmOEV97a3RwIgGxqsJXDW7uL2gdK644ZB06dQWMLZKWe9uHqB+0XzGhzf5K6/dJ6xmhqHFQw/gbjsW5522h+7JK5VdNBnt7o+9Mbezo5ot/aGNyNq44sUzaM8hn9SeHRtHVmTOoZ+NEG3PYtC4ur8PPaM3AhiQNxcZKlxnWq</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -735,11 +735,11 @@
             </component>
             <component
               refId="Package\Todos los datos de control de acceso\Extrae todas las marcas"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae todas las marcas"
               usesDispositions="true"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"

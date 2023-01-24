@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/16/2022 3:14:04 PM"
@@ -13,7 +13,7 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="21"
-  DTS:VersionGUID="{BC7F5CCA-A270-416E-9673-73794C57CBA0}">
+  DTS:VersionGUID="{7D3E6408-FF60-4F0F-9339-B25437E4740A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="VIQgnX4kA2o="
-            IV="JkMW2+Z1XVS1MVru2XudZA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="selIn6T6jG0="
+            IV="+ThN5VmVb6z3DOFP8CaJog==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>JkMW2+Z1XVS1MVru2XudZCYLCBcQfJODC2VEp/TjnxhkGDwBcGvFanSkh5wZp1+96QpotASIj7euWLbNduZzGQzlJdjVmShyrChBvAFqKoT+964yPeDgUZl/lb6MV8fBVrIukSLkzA0VFESNRIpv2qnOzVd3/pVTmbX+TzN+pmjGRs3T+Ha0eKgOK5vDJaEl</CipherValue>
+              <CipherValue>+ThN5VmVb6z3DOFP8CaJoraI02ox87sO3A/l4/0dpGCZYiR1hxb/hV/J9FX1NU/zylGhKD8fXtGbvPbB0vT4uepT/Ou9mqxpB39BZTGNGj4ZLCjiibZNRiNae+H8hZbNbDreiifJlirsqP1QSfu54Y0XWgGJcIzx6+xGBfOY2q10RUqZH7YVTkTEkYKttbFk</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="/hNK+Q/kSh8="
-            IV="oSGgp3ybpI4tQ8mBslEA6w==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="+5pgkByyv8Y="
+            IV="PIPS2WOkehjHOurIsCaffg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>oSGgp3ybpI4tQ8mBslEA64ZsyKZLGLiPRRlYGTPSmEAOiEBdogjDVL6azpm3/RZvK8BlJsk8qHLqwId8j02vZOzTxjt4gOZAcxMiCmAAgm7M2cUme+tVUSifpRhLyj43/rgNB7E4eJhhErXh+nqg0/O52A2f7JQyjyGd1RAkEHQa74PA27/ifPJ3nAdKHybQ</CipherValue>
+              <CipherValue>PIPS2WOkehjHOurIsCaffhtTPD2rt0l8mnAXMncVtbBCmTabI2e+SWO+UHN/OROc8hIOXoO3N+y21cjcW/9B6CCq4TTdC3Y9uGFheqBuUBPKh8sA3V7JruRG9OGMIGxUsYNZ9QvOSfcG3wPHgHf1js/ZM9YXpBz+kUE8tzSiitE4xSxKw76XRdih5VAq8d8S</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -771,12 +771,12 @@
             </component>
             <component
               refId="Package\Tarea Flujo de datos\Extrae de acc_transaction"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae de acc_transaction"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"

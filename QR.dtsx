@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/15/2022 10:15:14 AM"
@@ -13,7 +13,7 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="9"
-  DTS:VersionGUID="{5AD5CEE7-B4DF-4A34-BFF1-2B6400EA80C7}">
+  DTS:VersionGUID="{1E5D4C2E-79C8-474E-A844-9C0AB4079561}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,12 +27,12 @@
           DTS:ConnectionString="Data Source=10.245.0.34;User ID=rcalvo;Initial Catalog=controlaccesoqr;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ebR8lHXKHeI="
-            IV="aQFINA5IEtkN4EZPgv2Ywg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="H5bE2E8+HhY="
+            IV="Dd/hWay+eIpihZqKeIzzOQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>aQFINA5IEtkN4EZPgv2Ywhv90VVpd08aw4OWC+oQ5s3hP5pYjuILb4Hq86NRpB7VDLTomID7zRP+9gS2TOuf3g92dBgv9XxvcF/D80U9fV8D8QTM5DIpIe9plV+dN5C/Yv9J7vr1cX8704SNpW9FMGGpMr3BVM0m4XI+h4thSb2CcC/k7T/VMt32Cs+P5BQe</CipherValue>
+              <CipherValue>Dd/hWay+eIpihZqKeIzzOUmvZYIHjczApt/MrA9RAgrkI4hFcQAWSyWXHD8sWBI6/drYPiHZli1ZYZtGm1er5BhbMzqsLhKT51kIOw74ehfNeKJHt06dBqcAvuQZsMFWnXbeRJsCR1GXOnS0y4ZQgZNmyQpNrpmfS+0uPcjTtCuJ1/z4YH8OcET0WCytJHtq</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="ivKUAMmhqMU="
-            IV="JRhQe/UvwzXnzQrt+gO5Sg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="xG7PuDmnfL0="
+            IV="P8yIiXhfAEQ37geXWDoZJA==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>JRhQe/UvwzXnzQrt+gO5Sto7CW2fjFSMu+R/vhA0COhgursx67OGn07Meuso4JwytxmqR0aNKmATIZF1WtjqEx6Vfmwovw702bGgFe87DmWEAfGoSK/Pb6+J+BMt/RGNu6lZ2IPoWFVvgemNRo5f9fF7tDRlPVD6Drb/JwVf8ojT/RvGzNN0HAimhZOCu7cY</CipherValue>
+              <CipherValue>P8yIiXhfAEQ37geXWDoZJEqnY7vwQ/7tPGMidNVcy2neOniS2j1vfdK03Z6dx3MsVdbSA8qSxKaLe/q5lzDZIcyDcdqit507PDyf+CQQPrNk29ixitHCcqDIFolebeMw5IJRzyhEaPGPhM4saZBOdIz6qcdbioakcne/xOZ1ejMK7p0zIbjFEJ/vDgJniUwh</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -134,7 +134,7 @@
               contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;12"
               description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
               name="Dejo documento solo numeros"
-              version="12">
+              version="10">
               <properties>
                 <property
                   dataType="System.String"
@@ -1505,7 +1505,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               contactInfo="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;12"
               description="Incluye y ejecuta código de scripts personalizados. Por ejemplo, se usa para aplicar una regla de negocios que limita el intervalo de valores válidos de una columna de ingresos o para sumar los valores de dos columnas y calcular el promedio de la suma."
               name="Componente de script"
-              version="12">
+              version="10">
               <properties>
                 <property
                   dataType="System.String"
@@ -3197,12 +3197,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               name="Salida 0"
               startId="Package\ETL Mayores\Componente de script.Outputs[Salida 0]" />
             <path
-              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
+              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
               endId="Package\ETL Mayores\Componente de script.Inputs[Entrada 0]"
               name="Salida de origen de OLE DB"
               startId="Package\ETL Mayores\Extrae personas.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
+              refId="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
               endId="Package\ETL Mayores\ODS_QR_Accesos.Inputs[Entrada de destino de OLE DB]"
               name="Salida de origen de OLE DB"
               startId="Package\ETL Mayores\Extrae accesos.Outputs[Salida de origen de OLE DB]" />
@@ -3431,7 +3431,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\ETL Mayores\Extrae personas"
           TopLeft="11.5,75.5" />
         <EdgeLayout
-          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
+          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
           TopLeft="154.5,26.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3457,7 +3457,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\ETL Mayores\Componente de script"
           TopLeft="301.5,75.5" />
         <EdgeLayout
-          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB1]"
+          Id="Package\ETL Mayores.Paths[Salida de origen de OLE DB]"
           TopLeft="165.5,96.5">
           <EdgeLayout.Curve>
             <mssgle:Curve

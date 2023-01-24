@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/16/2022 5:28:10 PM"
@@ -13,7 +13,7 @@
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
   DTS:VersionBuild="32"
-  DTS:VersionGUID="{EDBD0609-8103-400D-B12B-CE007A6A0888}">
+  DTS:VersionGUID="{85DAF1A9-3540-4297-B0F7-47429428F41E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,12 +38,12 @@
           DTS:ConnectionString="uid=read;Dsn=PostgreZK;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="Brtc4gjS/oA="
-            IV="jUgkWkj/eMpYqyZnlL0fwg==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="37SR6bmCCSo="
+            IV="g2sXvZjAybLS1M26zcqWgQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>jUgkWkj/eMpYqyZnlL0fwi8tcz5uuhqTlg+5uHuzzbuOHtaMiR+MNXw1MCgre0/YfPXRLuz/4rzAznrNC1GoAXaADRIhWvHboSdFziCM8lwH4cz2RkoLLzVXS7FvMAOvKBlYBQrcV9tsC3GDMo9+5UfiFABfNcE7HPZYsKje1sSjDTHz25crSZ/R4x8zV+Wd</CipherValue>
+              <CipherValue>g2sXvZjAybLS1M26zcqWgaoY9R/GlUpv9gItWMSg2XJlRpw/P3O8kr9wiUFtEFUDhfGUusRNzUrsrxu9wUJqAcyZJyNVchuYSLNj7zE/wn2pVVwrt+QN3s/0EobPHz/yBWa/dnBNuUbUddqXXp8BEop9MkYzeekE69kZXfhDN2gRmh65QHIHmFvr+D5IxBZM</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -59,12 +59,12 @@
           DTS:ConnectionString="Data Source=PROD-UCUDBS10\POWERBI;User ID=rcalvo;Initial Catalog=ODS_UCU;Provider=SQLNCLI11.1;Auto Translate=False;">
           <EncryptedData
             Type="http://www.w3.org/2001/04/xmlenc#Element"
-            Salt="IX6N0UIxE7U="
-            IV="VVxwxz13L65C4A5uIdMG2Q==" xmlns="http://www.w3.org/2001/04/xmlenc#">
+            Salt="AimiD8K98S0="
+            IV="19iihaPlOi+H2WXo3PkKxQ==" xmlns="http://www.w3.org/2001/04/xmlenc#">
             <EncryptionMethod
               Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" />
             <CipherData>
-              <CipherValue>VVxwxz13L65C4A5uIdMG2dnkwxwetooHq732yTd3GO9yR0lYc6CrbKA0/uoqfIa4lJduPF7bBHRgCx1EkYwHZ4a+1pOiiKNwcABWIHaQwzMp6j8c/x61P/1f183szu0ODDtMyZdi1MGi8NAkoeYUIXLZduqbCdbeqtJWhXx6L1/AdKxVfHRzRNhV0zklCk4a</CipherValue>
+              <CipherValue>19iihaPlOi+H2WXo3PkKxWA5uswv8hvuMk7k5W4eZGoPNIhiHCfk5r7yt8DmMTaV11DbGE6cfjq3EQzhDfzMiISEPfZf1YW3XyMLbBqEi6c6KSfRJHUrBMCSyj8vZS88on2MkdIzmaihewmkn3hJ+vr6Lsi4thytIpMznhSss6jQ7PHcE3A9K8zxqxK0msnO</CipherValue>
             </CipherData>
           </EncryptedData>
         </DTS:ConnectionManager>
@@ -123,7 +123,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_device"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="7">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -142,7 +142,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_device_event"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="8">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -159,7 +159,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_door"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="9">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -178,7 +178,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_level"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="10">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -197,7 +197,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_level_door"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="6">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -216,7 +216,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_reader"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="7">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -235,7 +235,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="acc_zone"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="9">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -252,7 +252,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="auth_area"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="10">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -271,7 +271,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="auth_department"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="6">
+      DTS:ThreadHint="8">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
@@ -856,12 +856,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_device\Extrae acc_device"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_device"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -2033,13 +2033,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_device_event\Extrae acc_device_event"
-              componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_device_event"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -3168,12 +3167,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_door\Extrae acc_door"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_door"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -4512,12 +4511,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_level\Extrae acc_level"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_level"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -5306,12 +5305,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_level_door\Extrae acc_level_door"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_level_door"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -6179,12 +6178,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_reader\Extrae acc_reader"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_reader"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -7191,13 +7190,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_acc_zone\Extrae acc_zone"
-              componentClassID="Microsoft.SSISODBCSrc"
-              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae acc_zone"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -7989,12 +7987,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_auth_area\Extrae auth_area"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae auth_area"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -8782,12 +8780,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_auth_department\Extrae auth_department"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="Extrae auth_department"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -9817,12 +9815,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_pers_person\extrae pers_person"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="extrae pers_person"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
@@ -11155,12 +11153,12 @@
             </component>
             <component
               refId="Package\ODS_ZK_vis_visitor\extrae vis_visitor"
-              componentClassID="Microsoft.SSISODBCSrc"
+              componentClassID="Attunity.SSISODBCSrc"
               description="Origen ODBC"
               name="extrae vis_visitor"
               usesDispositions="true"
               validateExternalMetadata="False"
-              version="1">
+              version="7">
               <properties>
                 <property
                   dataType="System.String"
